@@ -14,17 +14,6 @@ jobs:
       run: |
         curl -LSs "https://raw.githubusercontent.com/kuronami69/MemKernel/main/kernel/setup.sh" | bash -s M dogi
 
-    - name: Android kernel build
-      uses: lemniskett/android-kernel-actions@master
-      id: build
-      env:
-        NAME: Loganysl
-      with:
-        arch: arm64/arm32
-        compiler: compiler_version
-        defconfig: your_defconfig
-        image: Image.gz-dtb
-
     - name: Upload Kernel and Module
       uses: actions/upload-artifact@v4
       with:
